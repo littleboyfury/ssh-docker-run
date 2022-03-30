@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        run: ls -a -l
+      - run: ls -a -l
       - name: Push notifications
         uses: ./
         with:
