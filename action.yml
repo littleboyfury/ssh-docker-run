@@ -1,0 +1,50 @@
+name: ssh-docker-run
+author: skyfury
+description: ssh server, docker pull image and docker run container
+branding:
+  icon: 'home'
+  color: 'blue'
+inputs:
+  deploy_token:
+    description: 'ssh server private key base64 string'
+    required: true
+  server_host:
+    description: 'server connect url (xxx@xxxx)'
+    required: true
+  docker_host:
+    description: 'docker connect host'
+    required: true
+  docker_username:
+    description: 'docker login username'
+    required: true
+  docker_password:
+    description: 'docker login password'
+    required: true
+  docker_namespace:
+    description: 'docker namespace'
+    required: true
+  docker_repo:
+    description: 'docker repository name'
+    required: true
+  image_tag:
+    description: 'image tag (latest)'
+    required: true
+  container_port:
+    description: 'docker container port (8001:80)'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Run script
+      shell: bash
+      run: $GITHUB_ACTION_PATH/script.sh
+      env:
+        INPUT_DEPLOY_TOKEN: ${{inputs.deploy_token}}
+        INPUT_SERVER_HOST: ${{inputs.server_host}}
+        INPUT_DOCKER_HOST: ${{inputs.docker_host}}
+        INPUT_DOCKER_USERNAME: ${{inputs.docker_username}}
+        INPUT_DOCKER_PASSWORD: ${{inputs.docker_password}}
+        INPUT_DOCKER_NAMESPACE: ${{inputs.docker_namespace}}
+        INPUT_DOCKER_REPO: ${{inputs.docker_repo}}
+        INPUT_IMAGE_TAG: ${{inputs.image_tag}}
+        INPUT_CONTAINER_PORT: ${{inputs.container_port}}
