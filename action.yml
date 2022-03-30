@@ -33,7 +33,7 @@ inputs:
     description: 'docker container port (8001:80)'
     required: true
 runs:
-  using: composite
+  using: 'composite'
   steps:
     - name: Run script
       shell: bash
