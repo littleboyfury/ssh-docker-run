@@ -1,9 +1,9 @@
 FROM docker:18
 
+COPY entrypoint.sh /entrypoint.sh
 
-COPY "script.sh" "/script.sh"
-
-RUN chmod +x /script.sh
+RUN ls -a -l
+RUN chmod +x /entrypoint.sh
 RUN apk add openssh
 
-ENTRYPOINT ["/script.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
