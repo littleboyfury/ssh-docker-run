@@ -6,5 +6,5 @@ RUN ls -a -l
 RUN chmod +x /entrypoint.sh
 RUN apk add openssh
 
-ENTRYPOINT ["bash", "/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
 #ENTRYPOINT ["sh", "-c", "echo $GITHUB_SHA"]
