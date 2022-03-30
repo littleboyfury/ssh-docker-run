@@ -1,0 +1,26 @@
+name: 'Push Notifications to Bark'
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  job:
+    name: Push notification job
+    runs-on: ubuntu-latest
+    container: 'docker:18'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Push notifications
+        uses: ./
+        with:
+          deploy_token: ${{secrets.DEPLOY_TOKEN}}
+          server_host: ${{secrets.SERVER_HOST}}
+          docker_host: ${{secrets.HOST}}
+          docker_username: ${{secrets.USERNAME}}
+          docker_password: ${{secrets.PASSWORD}}
+          docker_namespace: ${{secrets.NAMESPACE}}
+          docker_repo: ${{secrets.REPO}}
+          image_tag: 'latest'
+          container_port: '8000:80'
