@@ -1,4 +1,6 @@
 #!/bin/bash
+echo 'hhh'
+ls -a -l
 
 echo "${INPUT_DEPLOY_TOKEN}" | base64 -d > id_rsa
 chmod 700 id_rsa

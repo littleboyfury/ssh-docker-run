@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        run: ls -a -l
       - name: Push notifications
         uses: ./
         with:
@@ -21,4 +22,5 @@ jobs:
           docker_namespace: ${{secrets.NAMESPACE}}
           docker_repo: ${{secrets.REPO}}
           image_tag: 'latest'
-          container_port: '8000:80'
+          container_port: '8000:80'\
+
