@@ -1,5 +1,8 @@
 #!/bin/bash
+
 set -e
+
+ls -a -l
 echo "${INPUT_DEPLOY_TOKEN}" | base64 -d > id_rsa
 echo $INPUT_DEPLOY_TOKEN
 echo 'hhh'
