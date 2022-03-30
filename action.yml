@@ -1,5 +1,5 @@
 name: ssh-docker-run
-author: skyfury
+author: skyfury <littleboyfury@gmail.com>
 description: ssh server, docker pull image and docker run container
 branding:
   icon: 'home'
