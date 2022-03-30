@@ -3,12 +3,12 @@
 set -e
 
 ls -a -l
-echo "${INPUT_DEPLOY_TOKEN}" | base64 -d > id_rsa
-echo $INPUT_DEPLOY_TOKEN
 echo 'hhh'
+#echo "${INPUT_DEPLOY_TOKEN}" | base64 -d > id_rsa
+echo $INPUT_DEPLOY_TOKEN
 ls -a -l
-cat id_rsa
-chmod 700 id_rsa
+#cat id_rsa
+#chmod 700 id_rsa
 #apk add openssh
 #echo ${INPUT_SERVER_HOST}
 #ssh -o StrictHostKeyChecking=no -i id_rsa ${INPUT_SERVER_HOST} "
