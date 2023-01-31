@@ -32,6 +32,10 @@ inputs:
   container_port:
     description: 'docker container port (8001:80)'
     required: true
+  docker_options:
+    description: 'docker options'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

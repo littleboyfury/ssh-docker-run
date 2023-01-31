@@ -32,6 +32,7 @@ jobs:
           docker_repo: ${{secrets.REPO}}
           image_tag: 'latest'
           container_port: '7000:80'
+          docker_options: '-v /opt:/app/config'
 ```
 
 ## args
@@ -47,6 +48,7 @@ jobs:
 | docker_repo      | true    | docker repository (test)                     |
 | image_tag        | true    | docker image tag (latest)                    |
 | container_port   | true    | docker container port(8001:80)               |
+| docker_options   | true    | docker options (-v /opt:/app/config)         |
 
 docker image name: docker_host/docker_namespace/docker_repo:image_tag  
 docker image name example: ccr.ccs.tencentyun.com/skyfury/test:latest
