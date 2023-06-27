@@ -5,7 +5,7 @@
 this action use ssh to deploy docker container
 
 1. add your server id_rsa.pub to authorized_keys
-2. run `cat id_rsa | base64`, copy it to github secret
+2. run `cat id_rsa | base64`, copy it to GitHub secret
 3. create docker repository
 
 ```yaml
@@ -31,6 +31,7 @@ jobs:
           docker_namespace: ${{secrets.NAMESPACE}}
           docker_repo: ${{secrets.REPO}}
           image_tag: 'latest'
+          container_name: 'test_name'
           container_port: '7000:80'
           docker_options: '-v /opt:/app/config'
 ```
@@ -47,6 +48,7 @@ jobs:
 | docker_namespace | true    | docker namespace (skyfury)                   |
 | docker_repo      | true    | docker repository (test)                     |
 | image_tag        | true    | docker image tag (latest)                    |
+| container_name   | true    | docker container name                        |
 | container_port   | true    | docker container port(8001:80)               |
 | docker_options   | true    | docker options (-v /opt:/app/config)         |
 

@@ -20,5 +20,6 @@ jobs:
           docker_namespace: ${{secrets.NAMESPACE}}
           docker_repo: ${{secrets.REPO}}
           image_tag: 'latest'
+          container_name: 'test_name'
           container_port: '7000:80'
 

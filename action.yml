@@ -29,6 +29,9 @@ inputs:
   image_tag:
     description: 'image tag (latest)'
     required: true
+  container_name:
+    description: 'docker container name'
+    required: true
   container_port:
     description: 'docker container port (8001:80)'
     required: true
