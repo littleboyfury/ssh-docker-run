@@ -20,24 +20,20 @@ inputs:
   docker_password:
     description: 'docker login password'
     required: true
-  docker_namespace:
-    description: 'docker namespace'
+  docker_image_url:
+    description: 'docker image url'
     required: true
-  docker_repo:
-    description: 'docker repository name'
-    required: true
-  image_tag:
+  docker_image_tag:
     description: 'image tag (latest)'
     required: true
-  container_name:
+    default: 'latest'
+  docker_container_name:
     description: 'docker container name'
-    required: true
-  container_port:
-    description: 'docker container port (8001:80)'
     required: true
   docker_options:
     description: 'docker options'
-    required: false
+    required: true
+    default: '-itd'
 
 runs:
   using: 'docker'

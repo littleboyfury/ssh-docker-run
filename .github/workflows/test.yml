@@ -17,9 +17,8 @@ jobs:
           docker_host: ${{secrets.HOST}}
           docker_username: ${{secrets.USERNAME}}
           docker_password: ${{secrets.PASSWORD}}
-          docker_namespace: ${{secrets.NAMESPACE}}
-          docker_repo: ${{secrets.REPO}}
-          image_tag: 'latest'
-          container_name: 'test_name'
-          container_port: '7000:80'
+          docker_image_url: ${{secrets.IMAGE_URL}}
+          docker_image_tag: 'latest'
+          docker_container_name: 'test_name'
+          docker_options: '-itd --rm -p 7000:80 --name test_name'
 

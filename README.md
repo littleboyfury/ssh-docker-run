@@ -28,29 +28,22 @@ jobs:
           docker_host: ${{secrets.HOST}}
           docker_username: ${{secrets.USERNAME}}
           docker_password: ${{secrets.PASSWORD}}
-          docker_namespace: ${{secrets.NAMESPACE}}
-          docker_repo: ${{secrets.REPO}}
-          image_tag: 'latest'
-          container_name: 'test_name'
-          container_port: '7000:80'
-          docker_options: '-v /opt:/app/config'
+          docker_image_url: 'nginx'
+          docker_image_tag: 'latest'
+          docker_container_name: 'test_name'
+          docker_options: '-itd --rm -p 7000:80 -v /opt:/app/config --name test_name'
 ```
 
 ## args
 
-| arg              | require | info                                         |
-|------------------|---------|----------------------------------------------|
-| deploy_token     | true    | server id_rsa base64 string                  |
-| server_host      | true    | server connect host (username@host)          |
-| docker_host      | true    | docker connect host (ccr.ccs.tencentyun.com) |
-| docker_username  | true    | docker login username                        |
-| docker_password  | true    | docker login password                        |
-| docker_namespace | true    | docker namespace (skyfury)                   |
-| docker_repo      | true    | docker repository (test)                     |
-| image_tag        | true    | docker image tag (latest)                    |
-| container_name   | true    | docker container name                        |
-| container_port   | true    | docker container port(8001:80)               |
-| docker_options   | true    | docker options (-v /opt:/app/config)         |
-
-docker image name: docker_host/docker_namespace/docker_repo:image_tag  
-docker image name example: ccr.ccs.tencentyun.com/skyfury/test:latest
+| arg                   | require | info                                                                       |
+|-----------------------|---------|----------------------------------------------------------------------------|
+| deploy_token          | true    | server id_rsa base64 string                                                |
+| server_host           | true    | server connect host (username@host)                                        |
+| docker_host           | true    | docker connect host (ccr.ccs.tencentyun.com)                               |
+| docker_username       | true    | docker login username                                                      |
+| docker_password       | true    | docker login password                                                      |
+| docker_image_url      | true    | docker image url (nginx)                                                   |
+| docker_image_tag      | true    | docker image tag (latest)                                                  |
+| docker_container_name | true    | docker container name                                                      |
+| docker_options        | true    | docker options (-itd --rm -p 7000:80 -v /opt:/app/config --name test_name) |
